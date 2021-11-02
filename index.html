@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水の表現</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/a11y-dark.min.css">
+
+
+    <style>
+        pre,
+        code {
+            height: 100%;
+        }
+
+
+
+        .legitRipple>.legitRipple-ripple:nth-of-type(1) {
+            background: #536DFE;
+        }
+
+        .legitRipple>.legitRipple-ripple:nth-of-type(2) {
+            background: #FFEB3B;
+        }
+
+        .legitRipple>.legitRipple-ripple:nth-of-type(3) {
+            background: #E91E63;
+        }
+    </style>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/legit-ripple@1.1.0/dist/ripple.min.css">
+
+</head>
+
+<body>
+
+    <div class="bg-light py-5 mb-5">
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1>水の表現</h1>
+                    <p>
+                        CSSやJavascriptによる水の表現です。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container pb-5">
+        <div class="row" id="ripples">
+            <div class="col-12">
+                <h2><a href="https://github.com/sirxemic/jquery.ripples/" target="_blank">
+                        jQuery Ripples Plugin
+                    </a></h2>
+                <p>
+                    画像にhoverしてみてください。
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div id="imgRipples" class="h-100"
+                    style="background: url(img/img1.jpg) no-repeat center center; background-size: cover;min-height: 400px;">
+                </div>
+            </div>
+            <div class="col">
+                <pre><code class="js">$(selector).ripples();</code></pre>
+            </div>
+        </div>
+
+        <div class="row mt-5" id="hover">
+            <div class="col-12">
+                <h2><a href="https://github.com/SaboSuke/ripple-hover-effect/" target="_blank">Ripple Hover Effect
+                    </a></h2>
+                <p>
+                    画像にhoverしてみてください。
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+
+                <div id="imgHover" class="h-100" style="min-height: 400px;">
+                </div>
+            </div>
+            <div class="col">
+                <pre><code class="javascript">var ripple = new RippleEffect({
+    parent: document.querySelector('.my-div'),
+    intensity: 1,
+    strength: 2,
+    area: 4,
+    waveSpeed: 0.001,
+    speedIn: 2,
+    speedOut: 1.5,
+    easing: 'Expo.easeInOut',
+    hover: true,
+    texture: './img/my-img.jpg',
+});
+</code></pre>
+            </div>
+        </div>
+
+
+
+        <div class="row mt-5" id="rain">
+            <div class="col-12">
+                <h2><a href="https://mubaidr.js.org/rainyday.js/" target="_blank">RainyDay.js
+                    </a></h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div id="imgRainy"
+                    style="background: url(img/img1.jpg) no-repeat center center; background-size: cover;min-height: 400px">
+                </div>
+
+            </div>
+            <div class="col">
+                <pre><code>var image = document.getElementById('background');
+image.onload = function () {
+    var engine = new RainyDay({
+        image: this
+    });
+    engine.rain([
+        [1, 2, 8000]
+    ]);
+    engine.rain([
+        [3, 3, 0.88],
+        [5, 5, 0.9],
+        [6, 2, 1]
+    ], 100);
+};
+</code></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <div class="row mt-5" id="wavefy">
+            <div class="col-12">
+                <h2><a href="https://github.com/peacepostman/wavify" target="_blank">Wavify
+                    </a></h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <defs></defs>
+                    <path id="imgWavefy" d="" />
+                </svg>
+            </div>
+            <div class="col">
+                <pre><code>// For Vanilla JavaScript
+var myWave = wavify( document.querySelector('#myId'), {
+  height: 60,
+  bones: 3,
+  amplitude: 40,
+  color: 'rgba(150, 97, 255, .8)',
+  speed: .25
+})
+
+// For jQuery
+var myWave = $('#myID').wavify({
+  height: 60,
+  bones: 3,
+  amplitude: 40,
+  color: 'rgba(150, 97, 255, .8)',
+  speed: .25
+});
+</code></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="row mt-5" id="legitRipple">
+            <div class="col-12">
+                <h2><a href="https://matthias-vogt.github.io/legitRipple.js/" target="_blank">legitRipple.js
+                    </a></h2>
+
+                <p>
+                    グレーの枠内をクリックしてみてください。
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <div class="h-100 bg-light legitRipple"></div>
+            </div>
+            <div class="col">
+                <pre><code class="javascript">$.ripple({
+  ".material": {},
+  ".material.circle": {maxDiameter: "100%"},
+  ".customHTML": {template: $("&lt;p/&gt;").text("Custom ripple content!")},
+  ".callback": {
+    callback: function($container, $ripple, posI, maxDiameter) {
+      //is called whenever the ripple's css properties change
+    }
+  }
+});</code></pre>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery.ripples@0.6.3/dist/jquery.ripples-min.js"></script>
+    <script>
+        $('#imgRipples').ripples();
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ripple-hover-effect@1.0.0/src/ripple-effect.min.js"></script>
+
+    <script>
+        var ripple = new RippleEffect({
+            parent: document.querySelector('#imgHover'),
+            intensity: 1,
+            strength: 4,
+            area: 4,
+            waveSpeed: 0.01,
+            speedIn: 1,
+            speedOut: 1.5,
+            easing: 'Expo.easeInOut',
+            hover: true,
+            texture: './img/img1.jpg',
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/rainyday.js@0.1.7/dist/rainyday.min.js"></script>
+    <script>
+        var rainyDay = function () {
+            var rainyDay = new RainyDay({
+                image: 'imgRainy',
+                blur: 10,
+                fps: 60
+            });
+        };
+        rainyDay();
+    </script>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/wavify@1.0.0/wavify.js"></script>
+    <script>
+        var myWave = wavify(document.querySelector('#imgWavefy'), {
+            height: 80,
+            bones: 8,
+            amplitude: 50,
+            color: 'rgb(41, 72, 174)',
+            speed: 0.15
+        })
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/legit-ripple@1.1.0/dist/ripple.min.js"></script>
+
+    <script>
+        $(".legitRipple").ripple()
+    </script>
+
+
+
+</body>
+
+</html>
